@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Together Fit 2025</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #476048;
+      --primary-light: #5d7a61;
+      --secondary: #ff7c5b;
+      --secondary-light: #ffb5a3;
+      --accent-teal: #3a7c8e;
+      --accent-yellow: #f9dc5c;
+      --neutral-light: #f7f3e9;
+      --neutral-medium: #e5e0d5;
+      --neutral-dark: #50514f;
+      --white: #ffffff;
+      --section-padding: 5rem 0;
+      --transition: all 0.3s ease;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      --radius: 12px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: var(--neutral-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-color: var(--neutral-light);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 1rem;
+    }
+
+    .button-primary {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    .button-primary:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(71, 96, 72, 0.2);
+    }
+
+    .button-secondary {
+      background-color: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .button-secondary:hover {
+      background-color: var(--primary);
+      color: var(--white);
+      transform: translateY(-3px);
+    }
+    
+    .button-with-icon {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: var(--transition);
+      padding: 1rem 0;
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-item:after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--secondary);
+      transition: var(--transition);
+    }
+
+    .nav-item:hover:after {
+      width: 100%;
+    }
+
+    .nav-item i {
+      color: var(--secondary);
+    }
+
+    .nav-icon {
+      color: var(--primary);
+      font-size: 1.25rem;
+    }
+
+    /* Progress Indicator */
+    .progress-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: transparent;
+      z-index: 1001;
+    }
+
+    .progress-bar {
+      height: 4px;
+      background: var(--secondary);
+      width: 0%;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      min-height: 100vh;
+      padding-top: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      flex: 1;
+      background-image: url('https://mathewmoslow.neocities.org/aaron/aaron.png');
+      background-size: cover;
+      background-position: center;
+      clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+      position: relative;
+    }
+
+    .hero-image:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(71, 96, 72, 0.3), rgba(58, 124, 142, 0.2));
+    }
+
+    .hero-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .highlight {
+      color: var(--primary);
+      position: relative;
+      display: inline-block;
+    }
+
+    .highlight:after {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background-color: var(--secondary-light);
+      z-index: -1;
+      opacity: 0.6;
+    }
+
+    .stats-container {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .stat-number {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--neutral-dark);
+      opacity: 0.8;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    /* Featured Section */
+    .featured-section {
+      padding: var(--section-padding);
+      padding-top: 5rem; /* Added extra padding at top */
+      background-color: var(--white);
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-section {
+      padding: var(--section-padding);
+      background-color: var(--neutral-light);
+      position: relative;
+      z-index: 1;
+    }
+
+    .pricing-section {
+      padding: var(--section-padding);
+      background-color: var(--white);
+      position: relative;
+      z-index: 1;
+    }
+
+    .why-choose-section {
+      padding: var(--section-padding);
+      background-color: var(--neutral-light);
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonials-section {
+      padding: var(--section-padding);
+      background-color: var(--white);
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-section {
+      padding: var(--section-padding);
+      background-color: var(--neutral-light);
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 4rem; /* Increased bottom margin */
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-heading:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--secondary);
+      z-index: 1;
+    }
+
+    .section-subheading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem; /* Increased margin */
+      color: var(--neutral-dark);
+      font-size: 1.2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      position: relative;
+      z-index: 5;
+      padding-top: 40px; /* Add padding to accommodate icon overflow */
+      margin-top: 1rem;
+    }
+
+    .service-card {
+      background-color: var(--neutral-light);
+      border-radius: var(--radius);
+      overflow: visible; /* CRITICAL CHANGE: Changed from hidden to visible */
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+      z-index: 5;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background-color: var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin: 0 auto;
+      margin-top: -40px;
+      position: relative;
+      z-index: 10; /* Increased z-index */
+      box-shadow: var(--shadow);
+    }
+
+    .service-icon i {
+      font-size: 2rem;
+      color: var(--white);
+    }
+
+    .service-content {
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 5;
+    }
+
+    .service-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    /* About Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow);
+      height: 500px;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-content h2 {
+      margin-bottom: 1.5rem;
+      font-size: 2.2rem;
+    }
+
+    .about-content p {
+      margin-bottom: 1.5rem;
+    }
+
+    .certification-badges {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background-color: var(--primary-light);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .badge:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(71, 96, 72, 0.15);
+    }
+
+    .badge i {
+      font-size: 1rem;
+    }
+
+    /* Pricing Section */
+    .pricing-toggle {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3rem;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .pricing-toggle-btn {
+      padding: 0.5rem 1.5rem;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 1rem;
+      background-color: var(--neutral-medium);
+      color: var(--neutral-dark);
+    }
+
+    .pricing-toggle-btn.active {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .pricing-card {
+      background-color: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 1px solid var(--neutral-medium);
+      position: relative;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      border-color: var(--primary-light);
+    }
+
+    .pricing-card-header {
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 1px solid var(--neutral-medium);
+    }
+
+    .pricing-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    .pricing-description {
+      color: var(--neutral-dark);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .pricing-content {
+      padding: 2rem;
+    }
+
+    .pricing-amount {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .pricing-period {
+      font-size: 0.9rem;
+      color: var(--neutral-dark);
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-tier {
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .pricing-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .pricing-feature i {
+      color: var(--primary);
+    }
+
+    .pricing-note {
+      font-size: 0.8rem;
+      color: var(--neutral-dark);
+      opacity: 0.8;
+      font-style: italic;
+      margin-top: 1rem;
+    }
+
+    /* Testimonials Section */
+    .testimonial-card {
+      background-color: var(--neutral-light);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .testimonial-quote {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      color: var(--neutral-dark);
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .testimonial-quote:before {
+      content: '"';
+      font-family: 'Cabinet Grotesk', sans-serif;
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--secondary);
+      opacity: 0.5;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-info h4 {
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .author-info p {
+      font-size: 0.9rem;
+      margin: 0;
+      color: var(--neutral-dark);
+      opacity: 0.8;
+    }
+
+    /* Contact Section */
+    .contact-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .contact-info h3 {
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background-color: var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: var(--white);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-form {
+      background-color: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--neutral-medium);
+      font-family: 'Outfit', sans-serif;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(71, 96, 72, 0.2);
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    /* Floating CTA */
+    .floating-cta {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background-color: var(--secondary);
+      color: var(--white);
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 5px 20px rgba(255, 124, 91, 0.3);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: var(--transition);
+      z-index: 100;
+      font-weight: 600;
+    }
+
+    .floating-cta.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .floating-cta i {
+      margin-right: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 3rem 0;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .footer-logo {
+      margin-bottom: 1rem;
+    }
+
+    .footer-logo img {
+      height: 40px;
+    }
+
+    .footer-description {
+      margin-bottom: 1.5rem;
+      opacity: 0.8;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .social-icon:hover {
+      background-color: var(--secondary);
+      transform: translateY(-5px);
+    }
+
+    .footer-heading {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-link {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-link a {
+      color: var(--white);
+      opacity: 0.8;
+      transition: var(--transition);
+    }
+
+    .footer-link a:hover {
+      opacity: 1;
+      padding-left: 5px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 3rem;
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .animated-title {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 50%, var(--accent-teal) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientMove 5s ease infinite;
+    }
+
+    .fade-up {
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .scale-in {
+      animation: scaleIn 0.5s ease forwards;
+    }
+
+    /* Responsive design */
+    @media (max-width: 991px) {
+      .hero {
+        flex-direction: column;
+      }
+      
+      .hero-image {
+        height: 50vh;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      }
+      
+      .hero-content {
+        padding: 3rem 2rem;
+      }
+      
+      .services-grid, .pricing-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .about-grid, .contact-split, .footer-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .about-image {
+        height: 300px;
+        order: -1;
+      }
+    }
+
+    @media (max-width: 767px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .services-grid, .pricing-cards {
+        grid-template-columns: 1fr;
+      }
+      
+      .stats-container {
+        flex-wrap: wrap;
+      }
+      
+      .stat-item {
+        flex: 1 0 45%;
+      }
+    }
+
+    /* Mobile Menu Toggle */
+    .mobile-menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    @media (max-width: 767px) {
+      .mobile-menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Progress Bar -->
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <img src="https://mathewmoslow.neocities.org/aaron/logo-light.png" alt="All Together Fit Logo">
+      </div>
+      <nav>
+        <div class="nav-links">
+          <a href="#" class="nav-item"><i class="fas fa-home nav-icon"></i> Home</a>
+          <a href="#" class="nav-item"><i class="fas fa-user nav-icon"></i> About</a>
+          <a href="#" class="nav-item"><i class="fas fa-dumbbell nav-icon"></i> Services</a>
+          <a href="#" class="nav-item"><i class="fas fa-star nav-icon"></i> Why Aaron</a>
+          <a href="#" class="nav-item"><i class="fas fa-heart nav-icon"></i> Success Stories</a>
+          <a href="#" class="nav-item"><i class="fas fa-envelope nav-icon"></i> Contact</a>
+          <a href="#" class="button button-primary button-with-icon">
+            <i class="fas fa-play"></i> Get Started
+          </a>
+        </div>
+        <div class="mobile-menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-image"></div>
+    <div class="hero-content">
+      <div class="fade-up" style="animation-delay: 0.2s;">
+        <h1><span class="animated-title">Transform Your Life</span> With <span class="highlight">Personalized Fitness</span></h1>
+        <p>At All Together Fit, your goals become our mission. Aaron delivers more than workouts—he provides a complete fitness partnership built on expertise, accountability, and unwavering support.</p>
+      </div>
+      
+      <div class="stats-container fade-up" style="animation-delay: 0.4s;">
+        <div class="stat-item scale-in" style="animation-delay: 0.6s;">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Clients Transformed</span>
+        </div>
+        <div class="stat-item scale-in" style="animation-delay: 0.7s;">
+          <span class="stat-number">12+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-item scale-in" style="animation-delay: 0.8s;">
+          <span class="stat-number">98%</span>
+          <span class="stat-label">Client Satisfaction</span>
+        </div>
+      </div>
+      
+      <div class="hero-buttons fade-up" style="animation-delay: 0.6s;">
+        <a href="#" class="button button-primary">Get Started</a>
+        <a href="#" class="button button-secondary">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Aaron Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <h2 class="section-heading">ABOUT AARON</h2>
+      
+      <div class="about-grid">
+        <div class="about-content fade-up">
+          <p>Aaron brings years of elite fitness experience and specialized certifications to every session. What truly sets him apart? His ability to connect with clients on a personal level, understanding your unique needs and adapting his approach accordingly.</p>
+          
+          <p>His journey from fitness enthusiast to respected personal trainer is fueled by a simple belief: everyone deserves personalized attention and evidence-based training that delivers results.</p>
+          
+          <div class="certification-badges">
+            <div class="badge">
+              <i class="fas fa-certificate"></i> NPTI Certified
+            </div>
+            <div class="badge">
+              <i class="fas fa-certificate"></i> CrossFit Level 1
+            </div>
+            <div class="badge">
+              <i class="fas fa-certificate"></i> Fitness Nutrition
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-image fade-up" style="animation-delay: 0.3s;">
+          <img src="https://mathewmoslow.neocities.org/aaron/aaron.png" alt="Aaron Portrait">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="featured-section" id="services">
+    <div class="container">
+      <h2 class="section-heading">SERVICES</h2>
+      <p class="section-subheading">Comprehensive fitness solutions tailored to your individual needs and goals</p>
+      
+      <div class="services-grid">
+        <div class="service-card fade-up" style="animation-delay: 0.2s;">
+          <div class="service-icon">
+            <i class="fas fa-clipboard-list"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Personalized Training Plans</h3>
+            <p>Custom workouts designed specifically for your body, goals, and lifestyle. No cookie-cutter routines—just targeted programming that evolves as you progress.</p>
+          </div>
+        </div>
+        
+        <div class="service-card fade-up" style="animation-delay: 0.4s;">
+          <div class="service-icon">
+            <i class="fas fa-apple-alt"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Nutrition Guidance</h3>
+            <p>Sustainable eating strategies that complement your training and fit your life, not the other way around.</p>
+          </div>
+        </div>
+        
+        <div class="service-card fade-up" style="animation-delay: 0.6s;">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Accountability Coaching</h3>
+            <p>Regular check-ins, adjustments, and unwavering support keep you progressing even when motivation wavers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Pricing Section -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <h2 class="section-heading">PRICING</h2>
+      <p class="section-subheading">Flexible training options that fit your schedule and budget</p>
+      
+      <div class="pricing-cards">
+        <!-- 60-Minute Sessions Card -->
+        <div class="pricing-card fade-up" style="animation-delay: 0.2s;">
+          <div class="pricing-card-header">
+            <h3 class="pricing-title">60-Minute Sessions</h3>
+            <p class="pricing-description">One-on-one personalized training</p>
+          </div>
+          
+          <div class="pricing-content">
+            <div class="pricing-tier">
+              <div class="pricing-amount">$80</div>
+              <div class="pricing-period">single session</div>
+            </div>
+            
+            <div class="pricing-tier">
+              <div class="pricing-amount">$68</div>
+              <div class="pricing-period">monthly 4+</div>
+            </div>
+            
+            <div class="pricing-tier">
+              <div class="pricing-amount">$65</div>
+              <div class="pricing-period">monthly 8+ ea</div>
+            </div>
+            
+            <ul class="pricing-features">
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i> Full fitness assessment
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i> Customized workout plans
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i> Nutrition guidance
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i> Flexible scheduling
+              </li>
+            </ul>
+            
+            <a href="#" class="button button-primary" style="width: 100%;">Get Started</a>
+          </div>
+        </div>
+        
+        <!-- 30-Minute Sessions Card -->
+        <div class="pricing-card fade-up" style="animation-delay: 0.4s;">
+          <div class="pricing-card-header">
+            <h3 class="pricing-title">30-Minute Sessions</h3>
+            <p class="pricing-description">Quick, focused workout sessions</p>
+          </div>
+          
+          <div class="pricing-content">
+            <div class="pricing-tier">
+              <div class="pricing-amount">$50</div>
+              <div class="pricing-period">single session ea</div>
+            </div>
+            
+            <div class="pricing-tier">
+              <div class="pricing-amount">$45</div>
+              <div class="pricing-period">30-min 5-pack flexible-use*</div>
+            </div>
+            
+            <ul class="pricing-features">
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i> High-intensity workouts
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i> Efficient time management
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i> Form correction
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i> Great for busy schedules
+              </li>
+            </ul>
+            
+            <a href="#" class="button button-primary" style="width: 100%;">Get Started</a>
+            
+            <p class="pricing-note">* Flexible-use packages expire only if unused for more than 60 days</p>
+          </div>
+        </div>
+        
+        <!-- Session Packages Card -->
+        <div class="pricing-card fade-up" style="animation-delay: 0.6s;">
+          <div class="pricing-card-header">
+            <h3 class="pricing-title">Session Packages</h3>
+            <p class="pricing-description">Best value for committed clients</p>
+          </div>
+          
+          <div class="pricing-content">
+            <div class="pricing-tier">
+              <div class="pricing-amount">$80</div>
+              <div class="pricing-period">60-min 5-pack ea</div>
+            </div>
+            
+            <div class="pricing-tier">
+              <div class="pricing-amount">$68</div>
+              <div class="pricing-period">60-min 10-pack ea</div>
+            </div>
+            
+            <ul class="pricing-features">
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i> Greatest savings
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i> Priority scheduling
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i> Regular progress assessments
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i> Extended program planning
+              </li>
+            </ul>
+            
+            <a href="#" class="button button-primary" style="width: 100%;">Get Started</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-subheading" style="margin-top: 3rem; font-style: italic;">
+        All sessions take place at our private fitness studio in Winter Park. Contact Aaron for special rates on partner training and group sessions.
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Aaron Section -->
+  <section class="why-choose-section" id="why-aaron">
+    <div class="container">
+      <h2 class="section-heading">WHY CHOOSE AARON</h2>
+      
+      <div class="about-grid">
+        <div class="about-content fade-up">
+          <p>Aaron doesn't just count reps—he makes every moment count. His clients succeed because he invests fully in their journey, combining technical expertise with genuine care for your wellbeing.</p>
+          
+          <div class="service-card" style="margin-top: 2rem;">
+            <div class="service-content">
+              <h3 class="service-title">Personalized Approach</h3>
+              <p>Every program is built specifically for your body, goals, and lifestyle.</p>
+            </div>
+          </div>
+          
+          <div class="service-card" style="margin-top: 1rem;">
+            <div class="service-content">
+              <h3 class="service-title">Evidence-Based Training</h3>
+              <p>Methods grounded in science and proven through years of practical experience.</p>
+            </div>
+          </div>
+          
+          <div class="service-card" style="margin-top: 1rem;">
+            <div class="service-content">
+              <h3 class="service-title">Supportive Environment</h3>
+              <p>Training in a judgment-free space where your comfort is the priority.</p>
+            </div>
+          </div>
+          
+          <div class="service-card" style="margin-top: 1rem;">
+            <div class="service-content">
+              <h3 class="service-title">Sustainable Results</h3>
+              <p>Focus on habits and approaches that deliver long-term success, not quick fixes.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-image fade-up" style="animation-delay: 0.3s;">
+          <img src="https://mathewmoslow.neocities.org/aaron/aaron-training.jpg" alt="Aaron Training" onerror="this.src='/api/placeholder/600/800'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section" id="success-stories">
+    <div class="container">
+      <h2 class="section-heading">SUCCESS STORIES</h2>
+      <p class="section-subheading">Hear from clients who have transformed their lives with Aaron's guidance</p>
+      
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-quote">
+          After putting on close to 30 pounds in COVID lockdown I was so depressed and didn't like the way I looked at all. It was because of Aaron's motivation, support and commitment to my fitness goals and wellbeing that I ended up actually liking exercise. I looked forward to our sessions and I couldn't be happier today. I owe it all to Aaron.
+        </div>
+        
+        <div class="testimonial-author">
+          <div class="author-info">
+            <h4>Matt</h4>
+            <p>Client for 1 year</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <h2 class="section-heading">CONTACT</h2>
+      <p class="section-subheading">Ready to transform your fitness journey? Aaron is currently accepting new clients who are serious about sustainable change.</p>
+      
+      <div class="contact-split">
+        <div class="contact-info fade-up">
+          <h3>Get In Touch</h3>
+          
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <h4>Email</h4>
+              <p>aaron@alltogetheFit.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <h4>Location</h4>
+              <p>1152 Harmon Avenue, Winter Park, FL 32789</p>
+            </div>
+          </div>
+          
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <i class="fab fa-instagram"></i>
+            </div>
+            <div>
+              <h4>Instagram</h4>
+              <p>@alltogetherfit</p>
+            </div>
+          </div>
+          
+          <div style="margin-top: 2rem;">
+            <h4>Located alongside these other great establishments:</h4>
+            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+              <img src="https://mathewmoslow.neocities.org/aaron/File%201.png" alt="Partner establishment logo">
+              <img src="https://mathewmoslow.neocities.org/aaron/File%203.png" alt="Partner establishment logo">
+              <img src="https://mathewmoslow.neocities.org/aaron/File%203.png" alt="Partner establishment logo">
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form fade-up" style="animation-delay: 0.3s;">
+          <form>
+            <div class="form-group">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control">
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control">
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Phone (optional)</label>
+              <input type="tel" class="form-control">
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea class="form-control"></textarea>
+            </div>
+            
+            <button type="submit" class="button button-primary" style="width: 100%;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div>
+          <div class="footer-logo">
+            <img src="https://mathewmoslow.neocities.org/aaron/logo-dark.png" alt="All Together Fit Logo">
+          </div>
+          <p class="footer-description">Personalized fitness solutions that transform lives. Aaron's evidence-based approach creates sustainable results for clients of all fitness levels.</p>
+          <div class="footer-social">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="#">Home</a></li>
+            <li class="footer-link"><a href="#about">About Aaron</a></li>
+            <li class="footer-link"><a href="#services">Services</a></li>
+            <li class="footer-link"><a href="#pricing">Pricing</a></li>
+            <li class="footer-link"><a href="#why-aaron">Why Aaron</a></li>
+            <li class="footer-link"><a href="#success-stories">Success Stories</a></li>
+            <li class="footer-link"><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-heading">Hours</h4>
+          <ul class="footer-links">
+            <li class="footer-link">Monday - Friday: 6am - 8pm</li>
+            <li class="footer-link">Saturday: 8am - 2pm</li>
+            <li class="footer-link">Sunday: By appointment</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 All Together Fit. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating CTA -->
+  <div class="floating-cta" id="floatingCta">
+    <i class="fas fa-calendar-check"></i> Book Your Free Consultation
+  </div>
+
+  <script>
+    // Progress bar 
+    window.onscroll = function() {
+      let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      let scrolled = (winScroll / height) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+      
+      // Show floating CTA after scrolling
+      if (winScroll > 300) {
+        document.getElementById("floatingCta").classList.add("visible");
+      } else {
+        document.getElementById("floatingCta").classList.remove("visible");
+      }
+    };
+    
+    // Animate elements on scroll
+    document.addEventListener("DOMContentLoaded", function() {
+      const animatedElements = document.querySelectorAll('.fade-up, .scale-in');
+      
+      function checkScroll() {
+        animatedElements.forEach(el => {
+          const elementTop = el.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (elementTop < windowHeight * 0.8) {
+            const delay = el.getAttribute('data-delay') || 0;
+            setTimeout(() => {
+              el.style.opacity = 1;
+              el.style.transform = 'translateY(0)';
+            }, delay * 1000);
+          }
+        });
+      }
+      
+      // Initial check
+      checkScroll();
+      
+      // Check on scroll
+      window.addEventListener('scroll', checkScroll);
+    });
+  </script>
+</body>
+</html>
